@@ -1,0 +1,14 @@
+name: shell commands #name of our workflow
+
+on: [push] #the event to trigger github action. can be more than one but separated with commas, like [push, pull request]
+
+jobs:
+  run-shell-command:  #indent using 2 spaces
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo a string
+        run: echo "Hello World"
+      - name: multiline script
+        run:  |               #the pipes makes it possible to run more than one command. 
+          node -v
+          npm -v
